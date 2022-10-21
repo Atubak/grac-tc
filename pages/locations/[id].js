@@ -55,7 +55,6 @@ export default function SingleLocation({ data }) {
   const router = useRouter();
   const [locData, setLocData] = useState(data.location);
 
-  console.log(locData);
   return (
     <Layout>
       <h1>{locData.name}</h1>

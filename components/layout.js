@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function Layout({ children }) {
   return (
-    <>
-      <nav className={styles.footer}>
+    <div className={styles.page}>
+      <nav className={styles.header}>
         <Link href="/">Home</Link>
       </nav>
       <main className={styles.container}>{children}</main>
@@ -15,12 +15,9 @@ export default function Layout({ children }) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
+          Powered by the Rick and Morty API
         </a>
       </footer>
-    </>
+    </div>
   );
 }

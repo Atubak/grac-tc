@@ -7,8 +7,6 @@ import { useState } from "react";
 // template component for pages i.e. locations, episodes, characters
 export default function TypePage({ data, graphQuery, pageType }) {
   const [pageData, setPageData] = useState(data);
-  console.log("dataprop", data);
-  console.log(pageData);
 
   //   function that takes page number from the nav buttons and returns the new state for the list of locations
   //   have to do this from client side because it's not practical to prerender all pages of locations from the api
