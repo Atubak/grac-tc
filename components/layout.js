@@ -1,10 +1,13 @@
 import Image from "next/image";
 import styles from "../styles/utils.module.css";
+import Link from "next/link";
 
 export default function Layout({ children }) {
   return (
-    <div>
-      <nav className={styles.footer}>nav</nav>
+    <>
+      <nav className={styles.footer}>
+        <Link href="/">Home</Link>
+      </nav>
       <main className={styles.container}>{children}</main>
       <footer className={styles.footer}>
         <a
@@ -18,6 +21,6 @@ export default function Layout({ children }) {
           </span>
         </a>
       </footer>
-    </div>
+    </>
   );
 }

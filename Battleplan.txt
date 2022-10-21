@@ -1,0 +1,25 @@
+-locations page:
+    xxxxxxxxxxmake query to get all locations
+    xxxxxxxxxxxlist all locations on page
+    xxxxxxxxxxxx-make them links/cards
+    xxxxmake individual location details page
+    xxxxxxxlink from all locations to details page
+    xxxxxxxxxxxxmake query to get all chars in a loc
+    xxxxxxxxxxxxxxlist the characters that are in this loc
+
+-episode page:
+    xxxxmake query that shows all episodes
+    xxxxxlist all episodes on page
+    xxxxxmake links
+    -query an individual ep
+    -make individual ep pages
+    -link chars in ep
+
+-characters page:
+    -make query that shows all chars
+    -list them
+    -make individual page
+    -show all locations
+        episodes
+        dimensions and make links to pages
+        + rest of info
