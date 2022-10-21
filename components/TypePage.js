@@ -24,30 +24,27 @@ export default function TypePage({ data, graphQuery, pageType }) {
     <Layout>
       <h1>all {pageType}</h1>
       <div className={styles.list}>
-        <div>
-          {pageData.results.map((result) => {
-            return (
-              <div key={result.id}>
-                <Link href={`/${pageType}/${result.id}`}>
-                  <a>{result.name}</a>
-                </Link>
-              </div>
-            );
-          })}
-        </div>
-        <br />
-        <div>
-          <button onClick={() => getNewPage(pageData.info.prev)}>
-            previous
-          </button>
-          {pageData.info.prev ? pageData.info.prev + 1 : 1}
-          <button onClick={() => getNewPage(pageData.info.next)}>next</button>
-          <p>
-            total number of pages: {pageData.info.pages}
-            <br />
-            total number of {pageType}: {pageData.info.count}
-          </p>
-        </div>
+        {pageData.results.map((result) => {
+          return (
+            <div key={result.id}>
+              <Link href={`/${pageType}/${result.id}`}>
+                <a>{result.name}</a>
+              </Link>
+            </div>
+          );
+        })}
+      </div>
+
+      <br />
+      <div>
+        <button onClick={() => getNewPage(pageData.info.prev)}>previous</button>
+        {pageData.info.prev ? pageData.info.prev + 1 : 1}
+        <button onClick={() => getNewPage(pageData.info.next)}>next</button>
+        <p>
+          total number of pages: {pageData.info.pages}
+          <br />
+          total number of {pageType}: {pageData.info.count}
+        </p>
       </div>
     </Layout>
   );

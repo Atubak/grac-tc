@@ -30,6 +30,7 @@ export async function getStaticProps() {
 }
 
 export default function Episodes({ data }) {
+  // graphquery takes a variable in order to navigate the api's pagination
   const graphQuery = `query getEpisodes($page: Int) {
     episodes(page: $page) {
       info {

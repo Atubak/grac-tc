@@ -19,7 +19,7 @@ export default function Home() {
         <br />
         <br />
         <Link href="/characters">
-          <a> Character Details</a>
+          <a> Characters</a>
         </Link>
       </div>
     </Layout>

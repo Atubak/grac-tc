@@ -3,6 +3,7 @@ import Charlink from "../../components/charlink";
 import Layout from "../../components/layout";
 import { queryfunc } from "../../utils/graphql";
 import styles from "../../styles/utils.module.css";
+import { useRouter } from "next/router";
 
 export async function getStaticPaths() {
   const query = `query {
@@ -48,6 +49,7 @@ export async function getStaticProps(context) {
 }
 
 export default function SingleEpisode({ data }) {
+  const router = useRouter();
   const [epData, setEpData] = useState(data);
   console.log(epData);
   return (
@@ -59,6 +61,10 @@ export default function SingleEpisode({ data }) {
           return <Charlink key={char.id} char={char} />;
         })}
       </div>
+      <br />
+      <button onClick={() => router.push("/episodes")}>
+        Back to Episodes Page
+      </button>
     </Layout>
   );
 }
