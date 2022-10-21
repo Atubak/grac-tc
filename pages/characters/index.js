@@ -24,7 +24,19 @@ export async function getStaticProps() {
 }
 
 export default function Characters({ data }) {
-  console.log(data);
-  const graphQuery = ``;
+  const graphQuery = `query getCharacters($page: Int) {
+    characters(page:$page) {
+      info {
+        next
+        prev
+        count
+        pages
+      }
+      results {
+        id
+        name
+      }
+    }
+  }`;
   return <TypePage data={data} graphQuery={graphQuery} pageType="characters" />;
 }

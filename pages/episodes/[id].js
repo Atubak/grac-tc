@@ -16,7 +16,6 @@ export async function getStaticPaths() {
   const response = await queryfunc(query);
 
   const numberOfEpisodes = response.episodes.info.count;
-  console.log(numberOfEpisodes);
 
   const paths = [];
   //   if I know how many locations there are I can make a {params} obj for each location
@@ -51,7 +50,7 @@ export async function getStaticProps(context) {
 export default function SingleEpisode({ data }) {
   const router = useRouter();
   const [epData, setEpData] = useState(data);
-  console.log(epData);
+
   return (
     <Layout>
       <h1>{epData.name}</h1>

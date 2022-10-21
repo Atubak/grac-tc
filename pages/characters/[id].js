@@ -56,7 +56,7 @@ export async function getStaticProps(context) {
 export default function SingleChar({ data }) {
   const router = useRouter();
   const [charData, setCharData] = useState(data);
-  console.log(charData);
+
   return (
     <Layout>
       <h1>{charData.name}</h1>
@@ -71,7 +71,18 @@ export default function SingleChar({ data }) {
               <a className={styles.locationLink}>{charData.location.name}</a>
             </Link>
           </p>
-          <p>Dimension: {charData.location.dimension}</p>
+          <p>
+            Dimension:{" "}
+            <Link
+              href={
+                "/dimensions/" + charData.location.dimension.replace(/ /g, "-")
+              }
+            >
+              <a className={styles.locationLink}>
+                {charData.location.dimension}
+              </a>
+            </Link>
+          </p>
         </div>
         <div>
           <Image
