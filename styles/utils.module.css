@@ -30,17 +30,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
+  /* flex-grow: 1; */
+  padding: 20px;
+  border-radius: 20px;
+  background-color: beige;
 }
 
-.title a {
+.list a {
   color: #0070f3;
   text-decoration: none;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
+.list a:hover,
+.list a:focus,
+.list a:active {
   text-decoration: underline;
 }
 

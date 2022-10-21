@@ -7,7 +7,7 @@ export default function Home() {
     <Layout>
       <h1>home</h1>
       <p>links to pages:</p>
-      <div className={styles.title}>
+      <div className={styles.list}>
         <Link href="/locations">
           <a> Locations</a>
         </Link>
