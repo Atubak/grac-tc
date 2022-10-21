@@ -1,7 +1,4 @@
-import axios from "axios";
-import Layout from "../../components/layout";
 import { queryfunc } from "../../utils/graphql";
-import { useState } from "react";
 import TypePage from "../../components/TypePage";
 
 export async function getStaticProps() {
