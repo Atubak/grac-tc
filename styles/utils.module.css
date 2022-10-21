@@ -36,9 +36,24 @@
   background-color: beige;
 }
 
+.list {
+  display: flex;
+  /* flex-direction: column; */
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+}
+
+.locationLink {
+  color: #0070f3;
+  text-decoration: none;
+}
+
 .list a {
   color: #0070f3;
   text-decoration: none;
+  border: 5px solid beige;
+  margin: 10px;
 }
 
 .list a:hover,
@@ -114,6 +129,18 @@
 .logo {
   height: 1em;
   margin-left: 0.5rem;
+}
+
+.characterInfo {
+  /* width: 300px;
+  height: 300px; */
+  border: 2px solid beige;
+  display: flex;
+  justify-content: space-around;
+}
+
+.charImage {
+  display: block;
 }
 
 @media (max-width: 600px) {

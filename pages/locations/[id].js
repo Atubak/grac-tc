@@ -59,7 +59,7 @@ export default function SingleLocation({ data }) {
   return (
     <Layout>
       <h1>{locData.name}</h1>
-      <p>{locData.dimension}</p>
+      <p>Dimension: {locData.dimension}</p>
       <div className={styles.list}>
         {locData.residents.length < 1
           ? "No characters are in this dimension"
