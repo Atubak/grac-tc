@@ -2,6 +2,10 @@ import axios from "axios";
 import Layout from "../../components/layout";
 import { queryfunc } from "../../utils/graphql";
 import { useState } from "react";
+import styles from "../../styles/utils.module.css";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Charlink from "../../components/charlink";
 
 export async function getStaticPaths() {
   const query = `query {
@@ -13,15 +17,15 @@ export async function getStaticPaths() {
       }`;
 
   const response = await queryfunc(query);
-  console.log("paths", response.locations.info.count);
 
   const numberOfLocations = response.locations.info.count;
   const paths = [];
 
+  //   if I know how many locations there are I can make a {params} obj for each location
   for (let i = 0; i < numberOfLocations; i++) {
     paths.push({ params: { id: `${i}` } });
   }
-  //   console.log("pathsnum", paths);
+
   return { paths, fallback: false };
 }
 
@@ -38,7 +42,7 @@ export async function getStaticProps(context) {
           }
         }
       }`;
-  console.log("paramsid", context.params.id);
+
   const variables = { id: context.params.id };
   const data = await queryfunc(query, variables);
 
@@ -48,12 +52,25 @@ export async function getStaticProps(context) {
 }
 
 export default function SingleLocation({ data }) {
+  const router = useRouter();
   const [locData, setLocData] = useState(data.location);
 
   console.log(locData);
   return (
     <Layout>
       <h1>{locData.name}</h1>
+      <p>{locData.dimension}</p>
+      <div className={styles.list}>
+        {locData.residents.length < 1
+          ? "No characters are in this dimension"
+          : locData.residents.map((res) => {
+              return <Charlink key={res.id} char={res} />;
+            })}
+      </div>
+      <br />
+      <button onClick={() => router.push("/locations")}>
+        Back to Locations Page
+      </button>
     </Layout>
   );
 }
